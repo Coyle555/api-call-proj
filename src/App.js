@@ -12,10 +12,10 @@ const renderContent = (apiData) => {
   if (apiData != null) {
     return apiData.data.map((data, i) => {
       return (
-        <div class="card mb-3">
-          <div class="card-header">{data.name}</div>
-          <div class="card-body">
-            <p class="card-text">
+        <div className="card mb-3" key={i}>
+          <div className="card-header">{data.name}</div>
+          <div className="card-body">
+            <p className="card-text">
               {data.description === null
                 ? "No Description Available"
                 : data.description}
@@ -48,10 +48,7 @@ function App() {
     } else {
       setNoInput(true);
     }
-    setData(
-      await axios.get(`https://api.github.com/orgs/${input}/repos`)
-      // .then((response) => console.log(response))
-    );
+    setData(await axios.get(`https://api.github.com/orgs/${input}/repos`));
   };
 
   return (
