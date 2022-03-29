@@ -21,7 +21,7 @@ const renderContent = (apiData) => {
                 : data.description}
             </p>
             <Link
-              to="/details"
+              to={`/details:${data.name}`}
               className="btn btn-primary"
               state={{ data: data }}
             >

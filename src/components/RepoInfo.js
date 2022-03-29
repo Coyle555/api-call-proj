@@ -5,7 +5,7 @@ const logo = {
   height: "200px",
 };
 
-function RepoInfo({ name, avatar, watchers, issues, forks, desc }) {
+function RepoInfo({ name, avatar, watchers, issues, forks, desc, license }) {
   return (
     <div className="container">
       <div className="row">
@@ -16,6 +16,7 @@ function RepoInfo({ name, avatar, watchers, issues, forks, desc }) {
           <h4>Watchers: {watchers}</h4>
           <h4>Issues: {issues}</h4>
           <h4>Forks: {forks}</h4>
+          <h4>License: {license}</h4>
         </div>
       </div>
     </div>

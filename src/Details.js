@@ -18,6 +18,7 @@ function Details(props) {
       watchers={data.watchers}
       issues={data.open_issues}
       forks={data.forks}
+      license={data.license.key}
     />
   );
 }
