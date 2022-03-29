@@ -48,7 +48,15 @@ function App() {
     } else {
       setNoInput(true);
     }
-    setData(await axios.get(`https://api.github.com/orgs/${input}/repos`));
+    setData(
+      await axios
+        .get(`https://api.github.com/orgs/${input}/repos`)
+        .catch((err) => {
+          if (err.response.data.message === "Not Found") {
+            return;
+          }
+        })
+    );
   };
 
   return (
